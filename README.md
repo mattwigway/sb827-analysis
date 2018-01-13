@@ -1,0 +1,7 @@
+# SB827 analysis
+
+This is the code used to create the map in [my blog post on California SB 827](https://indicatrix.org/will-rezoning-around-transit-stops-in-california-undermine-support-for-public-transit-883e69aaab2a). The main code is in `nb/GTFS Map Matching.ipynb`. The code requires Python 3.6, [gtfstk](https://github.com/araichev/gtfstk), [Shapely](https://github.com/Toblerity/Shapely), [pyproj](https://github.com/jswhit/pyproj), [Pandas](http://pandas.pydata.org/), [Numpy](http://www.numpy.org/), [requests](http://docs.python-requests.org/en/master/), the Google-format [polyline decoding library](https://github.com/hicsail/polyline), and of course [Jupyter Notebook](http://jupyter.org/). It connects to a [Valhalla](https://github.com/valhalla/valhalla) server to snap transit routes to the street network.
+
+I used GTFS data from [LA Metro](https://developer.metro.net/introduction/gtfs-data/download-metros-gtfs-data/) and [Metrolink](http://metrolinktrains.com/content/google_transit.zip). I used OSM data from Mapzen Metro Extracts, although that service will sadly be shut down at the end of January 2018. All of the data I used is reproduced [here](https://files.indicatrix.org/sb827/), although I recommend using up-to-date data if possible.
+
+The algorithm and thinking behind it is described in detail [here](https://indicatrix.org/identifying-high-quality-transit-corridors-a8e4eec37ed8).
